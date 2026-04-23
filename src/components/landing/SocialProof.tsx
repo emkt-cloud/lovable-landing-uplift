@@ -48,7 +48,7 @@ export function SocialProof() {
         </div>
         <div className="h-8 w-px bg-border hidden sm:block" />
         <p className="text-sm text-muted-foreground">
-          <span className="text-foreground font-semibold">1,200+</span> happy travelers
+          <span className="text-foreground font-semibold">150,000+</span> happy travelers
         </p>
       </div>
 

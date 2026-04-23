@@ -30,6 +30,52 @@ function LiveViewerCounter() {
   );
 }
 
+function CountdownTimer() {
+  const [timeLeft, setTimeLeft] = useState({ days: 3, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const endTime = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = endTime - now;
+      if (diff <= 0) {
+        clearInterval(interval);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+      setTimeLeft({
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((diff % (1000 * 60)) / 1000),
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  return (
+    <div className="flex items-center gap-2">
+      {[
+        { value: timeLeft.days, label: "D" },
+        { value: timeLeft.hours, label: "H" },
+        { value: timeLeft.minutes, label: "M" },
+        { value: timeLeft.seconds, label: "S" },
+      ].map((unit, i) => (
+        <div key={unit.label} className="flex items-center gap-1">
+          {i > 0 && <span className="text-cta font-bold">:</span>}
+          <span className="bg-background/60 rounded px-2 py-1 text-lg font-bold text-foreground tabular-nums">
+            {pad(unit.value)}
+          </span>
+          <span className="text-xs text-foreground/50">{unit.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function HeroSection() {
   const scrollToForm = () => {
     document.getElementById("claim-form")?.scrollIntoView({ behavior: "smooth" });
@@ -37,7 +83,6 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background image */}
       <img
         src={heroImg}
         alt="Galapagos Islands aerial view with cruise ship"
@@ -47,12 +92,10 @@ export function HeroSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
 
-      {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left column — Copy & CTA */}
+          {/* Left column */}
           <div className="space-y-6">
-            {/* Tripadvisor badge */}
             <div className="inline-flex items-center gap-2 bg-card/60 backdrop-blur-sm rounded-full px-4 py-2">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
@@ -79,7 +122,6 @@ export function HeroSection() {
               Get Your Offer
             </button>
 
-            {/* Live counter */}
             <div className="pt-2">
               <LiveViewerCounter />
             </div>
@@ -88,10 +130,13 @@ export function HeroSection() {
           {/* Right column — Offer card */}
           <div className="flex justify-center lg:justify-end">
             <div className="bg-card/70 backdrop-blur-md border border-border rounded-2xl p-8 max-w-sm w-full space-y-6 shadow-2xl">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-1.5 bg-cta/15 text-cta text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full">
-                <Clock className="w-3.5 h-3.5" />
-                Limited Time Offer
+              {/* Countdown timer */}
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-1.5 text-cta text-xs font-semibold uppercase tracking-wider">
+                  <Clock className="w-3.5 h-3.5" />
+                  Offer Expires In
+                </div>
+                <CountdownTimer />
               </div>
 
               {/* Main offer */}
@@ -100,13 +145,13 @@ export function HeroSection() {
                   <Gift className="w-8 h-8 text-cta flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-3xl font-bold text-cta">3 FREE Nights</p>
-                    <p className="text-foreground/60 text-sm">Added to your cruise itinerary</p>
+                    <p className="text-foreground/60 text-sm">at GO Quito Hotel</p>
                   </div>
                 </div>
 
                 <div className="border-t border-border/50 pt-3">
                   <p className="text-2xl font-bold text-foreground">
-                    + Up to <span className="text-cta">10% OFF</span>
+                    + <span className="text-cta">10% OFF</span>
                   </p>
                   <p className="text-foreground/60 text-sm">On selected departure dates</p>
                 </div>
@@ -125,14 +170,6 @@ export function HeroSection() {
                   </div>
                 ))}
               </div>
-
-              {/* Secondary CTA */}
-              <button
-                onClick={scrollToForm}
-                className="w-full bg-cta text-cta-foreground hover:opacity-90 transition-opacity font-bold py-3.5 rounded-lg cursor-pointer text-base"
-              >
-                Claim This Deal →
-              </button>
             </div>
           </div>
         </div>
