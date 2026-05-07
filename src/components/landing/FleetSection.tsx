@@ -111,7 +111,7 @@ const ships: Ship[] = [
 ];
 
 function scrollToForm() {
-  document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("claim-form")?.scrollIntoView({ behavior: "smooth" });
 }
 
 export function FleetSection() {
