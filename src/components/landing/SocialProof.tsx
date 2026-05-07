@@ -20,7 +20,7 @@ const testimonials = [
 
 export function SocialProof() {
   return (
-    <section className="py-16 px-4 bg-card">
+    <section className="section-light py-16 px-4">
       {/* Rating bar */}
       <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-8 mb-12">
         <div className="flex items-center gap-3">
