@@ -28,7 +28,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="claim-form" className="py-16 px-4 bg-card">
+      <section id="claim-form" className="section-light py-16 px-4">
         <div className="max-w-lg mx-auto text-center py-12">
           <div className="w-16 h-16 bg-cta/20 rounded-full flex items-center justify-center mx-auto mb-4">
             <Send className="w-8 h-8 text-cta" />
@@ -43,7 +43,7 @@ export function ContactForm() {
   }
 
   return (
-    <section id="claim-form" className="py-16 px-4 bg-card">
+    <section id="claim-form" className="section-light py-16 px-4">
       <div className="max-w-lg mx-auto">
         <h2 className="text-3xl font-bold text-center text-foreground mb-2">
           Claim Your Galapagos Deal
