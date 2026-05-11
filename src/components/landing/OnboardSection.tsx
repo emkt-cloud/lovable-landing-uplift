@@ -1,24 +1,10 @@
-import {
-  Utensils,
-  Wine,
-  Sparkles,
-  Wifi,
-  Waves,
-  Fish,
-  Compass,
-  Mountain,
-  CheckCircle2,
-} from "lucide-react";
+import { Ship, Mountain, Utensils, Waves, CheckCircle2 } from "lucide-react";
 
 const amenities = [
-  { icon: Utensils, label: "Gourmet Dining" },
-  { icon: Wine, label: "Lounge & Bar" },
-  { icon: Sparkles, label: "Sun Deck & Jacuzzi" },
-  { icon: Wifi, label: "Onboard Wi-Fi" },
-  { icon: Waves, label: "Snorkeling & Kayaking" },
-  { icon: Fish, label: "Scuba Diving (certified)" },
-  { icon: Compass, label: "Glass-Bottom Boat" },
-  { icon: Mountain, label: "Daily Guided Hikes" },
+  { icon: Ship, label: "4, 5, 8 up to 15 days itineraries" },
+  { icon: Mountain, label: "Daily Excursions" },
+  { icon: Utensils, label: "All Meals included" },
+  { icon: Waves, label: "Aquatic & onboard activities" },
 ];
 
 export function OnboardSection() {
@@ -35,7 +21,7 @@ export function OnboardSection() {
           Meals, naturalist guides and gear come standard — so you can focus on the wildlife.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {amenities.map((a) => (
             <div
               key={a.label}
