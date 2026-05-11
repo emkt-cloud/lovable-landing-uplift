@@ -1,20 +1,5 @@
 import { useState } from "react";
-import {
-  MapPin,
-  Sunrise,
-  Sunset,
-  Plane,
-  Check,
-  Plus,
-  Utensils,
-  Wine,
-  Sparkles,
-  Wifi,
-  Waves,
-  Mountain,
-  Anchor,
-  Shirt,
-} from "lucide-react";
+import { MapPin, Sunrise, Sunset, Plane } from "lucide-react";
 
 type Day = {
   label: string;
@@ -100,20 +85,6 @@ const days: Day[] = [
   },
 ];
 
-const included = [
-  { icon: Utensils, label: "Dining" },
-  { icon: Wine, label: "Lounge & Bar" },
-  { icon: Sparkles, label: "Jacuzzi" },
-  { icon: Mountain, label: "Daily Guided Hikes" },
-  { icon: Waves, label: "Snorkeling" },
-];
-
-const addOns = [
-  { icon: Anchor, label: "Kayak" },
-  { icon: Shirt, label: "Wetsuit" },
-  { icon: Wifi, label: "Wi-Fi" },
-];
-
 export function ItinerarySection() {
   const [active, setActive] = useState(0);
   const day = days[active];
@@ -121,9 +92,9 @@ export function ItinerarySection() {
   const isLast = active === days.length - 1;
 
   return (
-    <section className="section-light py-16 px-4">
+    <section className="section-light py-14 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-10">
+        <div className="mb-8">
           <p className="text-sm text-muted-foreground mb-1">Sample Itinerary — Galapagos Legend</p>
           <h2 className="text-3xl md:text-4xl font-bold text-cta">
             North & West Expedition
@@ -131,10 +102,32 @@ export function ItinerarySection() {
           <p className="text-lg text-foreground/80">8 Days / 7 Nights</p>
         </div>
 
-        <div className="grid lg:grid-cols-[280px_1fr] gap-6">
-          {/* Left — day rail */}
-          <aside className="space-y-2 lg:max-h-[640px] lg:overflow-y-auto pr-1">
-            <div className="bg-cta text-cta-foreground rounded-lg px-4 py-3 font-semibold text-sm uppercase tracking-wider">
+        {/* Mobile: horizontal day tabs */}
+        <div className="lg:hidden -mx-4 px-4 mb-4 overflow-x-auto">
+          <div className="flex gap-2 w-max pb-2">
+            {days.map((d, i) => {
+              const isActive = i === active;
+              return (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold border transition ${
+                    isActive
+                      ? "bg-cta text-cta-foreground border-cta"
+                      : "bg-card text-foreground border-border"
+                  }`}
+                >
+                  Day {i + 1}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-[240px_1fr] gap-6">
+          {/* Desktop day rail */}
+          <aside className="hidden lg:block space-y-1.5">
+            <div className="bg-cta text-cta-foreground rounded-lg px-3 py-2 font-semibold text-xs uppercase tracking-wider">
               Itinerary & Excursions
             </div>
             {days.map((d, i) => {
@@ -143,32 +136,34 @@ export function ItinerarySection() {
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`w-full text-left rounded-lg border p-3 flex gap-3 items-start transition ${
+                  className={`w-full text-left rounded-lg border p-2.5 flex gap-2.5 items-center transition ${
                     isActive
                       ? "bg-cta/10 border-cta"
                       : "bg-card border-border hover:border-cta/50"
                   }`}
                 >
                   <div
-                    className={`shrink-0 w-10 h-10 rounded-md flex flex-col items-center justify-center text-[10px] font-bold uppercase ${
+                    className={`shrink-0 w-9 h-9 rounded-md flex flex-col items-center justify-center text-[9px] font-bold uppercase ${
                       isActive ? "bg-cta text-cta-foreground" : "bg-muted text-foreground"
                     }`}
                   >
                     <span className="leading-none">Day</span>
-                    <span className="text-base leading-none mt-0.5">{i + 1}</span>
+                    <span className="text-sm leading-none mt-0.5">{i + 1}</span>
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs text-muted-foreground">{d.date}</p>
-                    <p className="text-sm font-semibold text-foreground truncate">{d.title}</p>
+                    <p className="text-[10px] text-muted-foreground leading-tight">{d.date}</p>
+                    <p className="text-xs font-semibold text-foreground truncate leading-tight">
+                      {d.title}
+                    </p>
                   </div>
                 </button>
               );
             })}
           </aside>
 
-          {/* Right — selected day */}
+          {/* Selected day */}
           <div className="bg-card border border-border rounded-xl overflow-hidden">
-            <div className="aspect-[16/8] w-full overflow-hidden bg-muted">
+            <div className="aspect-[16/6] lg:aspect-[16/5] w-full overflow-hidden bg-muted">
               <img
                 src={day.image}
                 alt={day.title}
@@ -177,16 +172,16 @@ export function ItinerarySection() {
               />
             </div>
 
-            <div className="p-6 md:p-8">
+            <div className="p-5 md:p-6">
               <div className="flex items-center gap-2 mb-2">
                 <span className="bg-cta text-cta-foreground text-xs font-bold px-2.5 py-1 rounded">
                   {day.label}
                 </span>
                 <span className="text-sm text-muted-foreground">{day.date}</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-5">{day.title}</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">{day.title}</h3>
 
-              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div className="rounded-lg border border-border p-4">
                   <div className="flex items-center gap-2 text-cta mb-2">
                     {isFirst ? <Plane className="w-4 h-4" /> : <Sunrise className="w-4 h-4" />}
@@ -203,49 +198,7 @@ export function ItinerarySection() {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="rounded-lg border border-border p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="w-6 h-6 rounded-full bg-cta/15 flex items-center justify-center">
-                      <Check className="w-3.5 h-3.5 text-cta" />
-                    </span>
-                    <p className="text-sm font-semibold text-foreground">Included</p>
-                  </div>
-                  <ul className="flex flex-wrap gap-2">
-                    {included.map((a) => (
-                      <li
-                        key={a.label}
-                        className="inline-flex items-center gap-1.5 text-xs bg-cta/10 text-foreground rounded-full px-3 py-1.5 border border-cta/20"
-                      >
-                        <a.icon className="w-3.5 h-3.5 text-cta" />
-                        {a.label}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-lg border border-border p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="w-6 h-6 rounded-full bg-muted flex items-center justify-center">
-                      <Plus className="w-3.5 h-3.5 text-foreground/70" />
-                    </span>
-                    <p className="text-sm font-semibold text-foreground">Additional Cost</p>
-                  </div>
-                  <ul className="flex flex-wrap gap-2">
-                    {addOns.map((a) => (
-                      <li
-                        key={a.label}
-                        className="inline-flex items-center gap-1.5 text-xs bg-muted text-foreground rounded-full px-3 py-1.5 border border-border"
-                      >
-                        <a.icon className="w-3.5 h-3.5 text-foreground/70" />
-                        {a.label}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
+              <div className="mt-5 flex items-center gap-2 text-xs text-muted-foreground">
                 <MapPin className="w-3.5 h-3.5 text-cta" />
                 Visitor sites operated under Galapagos National Park regulations.
               </div>

@@ -3,9 +3,11 @@ import { HeroSection } from "@/components/landing/HeroSection";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { FleetSection } from "@/components/landing/FleetSection";
 import { ItinerarySection } from "@/components/landing/ItinerarySection";
+import { IncludedSection } from "@/components/landing/IncludedSection";
 import { OnboardSection } from "@/components/landing/OnboardSection";
 import { HotelSection } from "@/components/landing/HotelSection";
 import { CTASection } from "@/components/landing/CTASection";
+import { FAQSection } from "@/components/landing/FAQSection";
 import { ContactForm } from "@/components/landing/ContactForm";
 import { StickyBar } from "@/components/landing/StickyBar";
 
@@ -28,9 +30,11 @@ function LandingPage() {
       <SocialProof />
       <FleetSection />
       <ItinerarySection />
+      <IncludedSection />
       <OnboardSection />
       <HotelSection />
       <CTASection />
+      <FAQSection />
       <ContactForm />
       <StickyBar />
       <footer className="section-light py-6 text-center text-xs text-muted-foreground border-t border-border">
