@@ -21,7 +21,7 @@ export function OnboardSection() {
           Meals, naturalist guides and gear come standard — so you can focus on the wildlife.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {amenities.map((a) => (
             <div
               key={a.label}
