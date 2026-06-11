@@ -1,5 +1,7 @@
-import heroImg from "@/assets/hero-galapagos.jpg";
 import { Star, Eye, Gift, Clock, ShieldCheck } from "lucide-react";
+
+const heroImg =
+  "https://images.unsplash.com/photo-1611689342806-0863700ce1e4?auto=format&fit=crop&w=1920&q=70";
 import { useState, useEffect } from "react";
 
 function LiveViewerCounter() {
@@ -83,9 +85,9 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <img
+            <img
         src={heroImg}
-        alt="Galapagos Islands aerial view with cruise ship"
+        alt="Blue-footed Booby in the Galapagos Islands"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
         height={1080}
