@@ -26,7 +26,7 @@ function LiveViewerCounter() {
       </span>
       <Eye className="w-4 h-4 text-foreground/60" />
       <span>
-        <strong className="text-foreground">{count}</strong> people viewing cruise deals right now
+        <strong className="text-foreground">{count}</strong> birders viewing departures right now
       </span>
     </div>
   );
@@ -108,13 +108,13 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
-              Galapagos Cruise
+              Galapagos
               <br />
-              <span className="text-cta">Deals 2026</span>
+              <span className="text-cta">Birdwatching Cruises 2026</span>
             </h1>
 
             <p className="text-foreground/70 text-lg max-w-md">
-              Explore the enchanted islands aboard luxury expedition cruises with exclusive savings you won't find anywhere else.
+              Spend 8 days tracking endemic seabirds, finches and waved albatross with naturalist guides — aboard the only expedition fleet that reaches the archipelago's top birding sites.
             </p>
 
             <button
