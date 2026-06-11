@@ -14,10 +14,10 @@ import { StickyBar } from "@/components/landing/StickyBar";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Galapagos Cruise Deals 2026 — GoGalapagos" },
-      { name: "description", content: "Get 3 FREE nights + 10% OFF on Galapagos expedition cruises. Limited availability. Claim your personalized offer now." },
-      { property: "og:title", content: "Galapagos Cruise Deals 2026 — GoGalapagos" },
-      { property: "og:description", content: "Get 3 FREE nights + 10% OFF on Galapagos expedition cruises." },
+      { title: "Galapagos Birdwatching Cruises 2026 — GoGalapagos" },
+      { name: "description", content: "Birding expedition cruises in the Galapagos: waved albatross, blue-footed boobies, Darwin's finches. 3 FREE nights + 10% OFF. Naturalist-led, small groups." },
+      { property: "og:title", content: "Galapagos Birdwatching Cruises 2026 — GoGalapagos" },
+      { property: "og:description", content: "Naturalist-led birding cruises with 3 FREE nights + 10% OFF on selected departures." },
     ],
   }),
   component: LandingPage,
