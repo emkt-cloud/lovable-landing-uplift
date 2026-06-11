@@ -17,28 +17,28 @@ const ships: Ship[] = [
   {
     id: "legend",
     name: "Galapagos Legend",
-    tag: "Boutique Expedition Cruise",
+    tag: "Boutique Birding Expedition",
     image: shipLegend,
     blurb:
-      "Our flagship and the fastest ship in the archipelago — swift transfers between islands mean more time exploring. Boutique design, gourmet dining, fitness center and sun deck for an exceptional onboard experience.",
+      "The fastest ship in the archipelago means more dawn landings at peak bird activity. Stable platform for scopes and big lenses, naturalist-led briefings every evening and access to remote seabird colonies like Genovesa and Punta Suárez.",
     stats: [
-      { icon: Users, label: "Guests", value: "100" },
-      { icon: Bed, label: "Cabins", value: "57 across 4 decks" },
-      { icon: Anchor, label: "Decks", value: "Earth · Sea · Moon · Sky" },
+      { icon: Users, label: "Birders per group", value: "Max 16 per guide" },
+      { icon: Bed, label: "Sun decks", value: "360° viewing & scope-ready" },
+      { icon: Anchor, label: "Routes", value: "North · West · South circuits" },
       { icon: Calendar, label: "Itineraries", value: "4, 5 & 8 days" },
     ],
   },
   {
     id: "coral",
     name: "Coral I & Coral II",
-    tag: "Expedition Yachts",
+    tag: "Small-Group Birding Yachts",
     image: shipCoral,
     blurb:
-      "Elegant sister yachts for travelers seeking a more intimate, personalized Galapagos experience. Three beautifully appointed decks, open-air Jacuzzi, panoramic lounge and a home-away-from-home ambiance.",
+      "Intimate yachts ideal for serious birders: tighter groups, quieter zodiacs and flexible landings to follow the birds. Panoramic lounge for sea-watching, open deck for pelagic species and naturalist guides specialised in Galapagos avifauna.",
     stats: [
       { icon: Users, label: "Guests", value: "Coral I: 36 · Coral II: 20" },
-      { icon: Bed, label: "Cabins", value: "Sky · Earth · Sea decks" },
-      { icon: Anchor, label: "Style", value: "Private-yacht feel" },
+      { icon: Bed, label: "Group size", value: "Small birding parties" },
+      { icon: Anchor, label: "Style", value: "Quiet, low-impact landings" },
       { icon: Calendar, label: "Itineraries", value: "4, 5 & 8 days" },
     ],
   },
@@ -54,13 +54,13 @@ export function FleetSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-cta mb-3">
-            Our Fleet
+            Our Birding Fleet
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Two ways to discover the Galapagos
+            Two expedition platforms built for birders
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Pick the ship that best fits your travel style.
+            Choose the ship that matches your birding style — flagship reach or intimate small-group access.
           </p>
         </div>
 

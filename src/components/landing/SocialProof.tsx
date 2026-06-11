@@ -2,18 +2,18 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    text: "Absolutely unforgettable. The crew was incredible and every island visit exceeded our expectations.",
+    name: "Sarah M. — RSPB member, UK",
+    text: "Logged 38 endemic species in a single week. The naturalist knew every call and exactly where each bird would be at every hour.",
     rating: 5,
   },
   {
-    name: "James & Linda K.",
-    text: "Best vacation we've ever taken. The wildlife encounters were magical. Worth every penny.",
+    name: "James & Linda K. — Audubon, USA",
+    text: "Waved albatross courtship on Española, flightless cormorants on Fernandina, red-footed boobies on Genovesa. A birder's bucket list, all in one trip.",
     rating: 5,
   },
   {
-    name: "Carlos R.",
-    text: "Professional service from start to finish. The booking process was seamless and stress-free.",
+    name: "Carlos R. — Naturalist photographer",
+    text: "Scopes ready at dawn, perfect light, zero crowds. The itinerary is built around bird activity, not tourist schedules.",
     rating: 5,
   },
 ];
@@ -48,7 +48,7 @@ export function SocialProof() {
         </div>
         <div className="h-8 w-px bg-border hidden sm:block" />
         <p className="text-sm text-muted-foreground">
-          <span className="text-foreground font-semibold">150,000+</span> happy travelers
+          <span className="text-foreground font-semibold">12,000+</span> birders guided since 2008
         </p>
       </div>
 

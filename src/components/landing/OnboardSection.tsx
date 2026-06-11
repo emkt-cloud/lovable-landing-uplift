@@ -1,10 +1,10 @@
 import { Ship, Mountain, Utensils, Waves, CheckCircle2 } from "lucide-react";
 
 const amenities = [
-  { icon: Ship, label: "4, 5, 8 up to 15 days itineraries" },
-  { icon: Mountain, label: "Daily Excursions" },
-  { icon: Utensils, label: "All Meals included" },
-  { icon: Waves, label: "Aquatic & onboard activities" },
+  { icon: Ship, label: "4, 5 & 8-day birding itineraries" },
+  { icon: Mountain, label: "Daily dawn excursions with naturalist" },
+  { icon: Utensils, label: "All meals & early-bird breakfasts" },
+  { icon: Waves, label: "Scope-friendly decks & quiet zodiacs" },
 ];
 
 export function OnboardSection() {
@@ -15,10 +15,10 @@ export function OnboardSection() {
           Onboard Experience
         </span>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-          Everything you need, all included
+          Designed around bird activity
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto mb-10">
-          Meals, naturalist guides and gear come standard — so you can focus on the wildlife.
+          Early breakfasts, flexible landings and naturalist guides certified by the Galapagos National Park — so you're on the trail when the birds are.
         </p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -37,7 +37,7 @@ export function OnboardSection() {
 
         <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
           <CheckCircle2 className="w-4 h-4 text-cta" />
-          All meals, naturalist guides & snorkeling gear included
+          Naturalist guide, species checklist & spotting scope use included
         </div>
       </div>
     </section>

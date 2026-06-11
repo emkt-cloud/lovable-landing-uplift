@@ -1,5 +1,7 @@
-import heroImg from "@/assets/hero-galapagos.jpg";
 import { Star, Eye, Gift, Clock, ShieldCheck } from "lucide-react";
+
+const heroImg =
+  "https://images.unsplash.com/photo-1611689342806-0863700ce1e4?auto=format&fit=crop&w=1920&q=70";
 import { useState, useEffect } from "react";
 
 function LiveViewerCounter() {
@@ -24,7 +26,7 @@ function LiveViewerCounter() {
       </span>
       <Eye className="w-4 h-4 text-foreground/60" />
       <span>
-        <strong className="text-foreground">{count}</strong> people viewing cruise deals right now
+        <strong className="text-foreground">{count}</strong> birders viewing departures right now
       </span>
     </div>
   );
@@ -83,9 +85,9 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <img
+            <img
         src={heroImg}
-        alt="Galapagos Islands aerial view with cruise ship"
+        alt="Blue-footed Booby in the Galapagos Islands"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
         height={1080}
@@ -106,13 +108,13 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
-              Galapagos Cruise
+              Galapagos
               <br />
-              <span className="text-cta">Deals 2026</span>
+              <span className="text-cta">Birdwatching Cruises 2026</span>
             </h1>
 
             <p className="text-foreground/70 text-lg max-w-md">
-              Explore the enchanted islands aboard luxury expedition cruises with exclusive savings you won't find anywhere else.
+              Spend 8 days tracking endemic seabirds, finches and waved albatross with naturalist guides — aboard the only expedition fleet that reaches the archipelago's top birding sites.
             </p>
 
             <button

@@ -15,73 +15,73 @@ const days: Day[] = [
     label: "Day 1",
     date: "Monday",
     title: "Baltra → Black Turtle Cove",
-    am: "Arrival at Baltra Airport — welcome aboard the Galapagos Legend with a refreshing tropical cocktail.",
-    pm: "Black Turtle Cove (Santa Cruz) — glide silently through mangroves spotting rays, sea turtles & reef sharks.",
+    am: "Arrival at Baltra. Welcome briefing and species checklist handover with your naturalist guide.",
+    pm: "Black Turtle Cove — silent zodiac drift through mangroves: lava herons, yellow warblers, brown pelicans and great blue herons.",
     image:
-      "https://images.unsplash.com/photo-1518790802543-9c1f17fdb4d8?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1611689342806-0863700ce1e4?auto=format&fit=crop&w=1200&q=70",
   },
   {
     label: "Day 2",
     date: "Tuesday",
     title: "Genovesa — Bird Island",
-    am: "Prince Phillip's Steps — climb dramatic cliffs into a seabird paradise of frigatebirds & Nazca boobies.",
-    pm: "Darwin Bay — coral-sand beach surrounded by red-footed boobies and swallow-tailed gulls.",
+    am: "Prince Phillip's Steps — red-footed boobies, Nazca boobies, great frigatebirds and short-eared owls hunting storm petrels in broad daylight.",
+    pm: "Darwin Bay — swallow-tailed gulls (the world's only nocturnal gull), lava gulls and large ground finches at arm's length.",
     image:
-      "https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1583309217394-d4ea7fd86ba4?auto=format&fit=crop&w=1200&q=70",
   },
   {
     label: "Day 3",
     date: "Wednesday",
     title: "South Plaza & Santa Fe",
-    am: "South Plaza Island — vivid red sesuvium plants and playful land iguanas under cactus forests.",
-    pm: "Santa Fe Island — snorkel with curious sea lions in a turquoise, sheltered bay.",
+    am: "South Plaza — Audubon shearwaters, red-billed tropicbirds nesting in the cliffs and the endemic Galapagos shearwater overhead.",
+    pm: "Santa Fe — Galapagos hawk, Galapagos dove and the endemic Santa Fe land iguana along the trail.",
     image:
-      "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?auto=format&fit=crop&w=1200&q=70",
   },
   {
     label: "Day 4",
     date: "Thursday",
     title: "Santa Cruz Highlands",
-    am: "Bachas Beach & Charles Darwin Station — meet the giant tortoises and learn about island conservation.",
-    pm: "Mosquera Islet — sandy haven of sea lion colonies, perfect for sunset photography.",
+    am: "Highlands scalesia forest — vermilion flycatcher, woodpecker finch and the elusive Galapagos rail in pastures and ponds.",
+    pm: "Twin craters & lava tunnels — short-eared owl, dark-billed cuckoo and Darwin's tree finches.",
     image:
-      "https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1551649001-7a2482d98d05?auto=format&fit=crop&w=1200&q=70",
   },
   {
     label: "Day 5",
     date: "Friday",
-    title: "Santiago & Rabida",
-    am: "Egas Port (Santiago) — fur seal grottos and lava-rock tide pools teeming with marine life.",
-    pm: "Rabida Island — surreal red-sand beach, flamingo lagoon & some of the best snorkeling of the trip.",
+    title: "Floreana — Punta Cormorant",
+    am: "Flamingo lagoon — greater flamingos feeding, white-cheeked pintails, common stilts and migratory shorebirds.",
+    pm: "Post Office Bay & Champion Islet — Floreana mockingbird (one of the rarest birds on Earth) viewed from the panga.",
     image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1535116519611-6dadb78e6f9b?auto=format&fit=crop&w=1200&q=70",
   },
   {
     label: "Day 6",
     date: "Saturday",
-    title: "Isabela — Urbina & Tagus",
-    am: "Urbina Bay — walk over an uplifted coral reef in search of giant land iguanas.",
-    pm: "Tagus Cove — kayak past historic graffiti and hike to Darwin Lake's panoramic viewpoint.",
+    title: "Española — Punta Suárez",
+    am: "Waved albatross colony (April–December) — courtship dances at point-blank range, Nazca boobies and the endemic Española mockingbird.",
+    pm: "Gardner Bay — Hood mockingbird, Galapagos hawk and yellow warblers along the beach.",
     image:
-      "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=70",
   },
   {
     label: "Day 7",
     date: "Sunday",
     title: "Fernandina & Isabela",
-    am: "Punta Espinosa (Fernandina) — the largest marine iguana colony on Earth, surrounded by lava fields.",
-    pm: "Punta Vicente Roca — zodiac ride past sea turtles, Galapagos penguins & flightless cormorants.",
+    am: "Punta Espinosa — flightless cormorants nesting, Galapagos penguins (the only penguin north of the equator) and lava herons fishing.",
+    pm: "Punta Vicente Roca — pelagic zodiac: brown noddies, Audubon shearwaters and possible whale sightings.",
     image:
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=70",
   },
   {
     label: "Day 8",
     date: "Monday",
     title: "Highlands → Departure",
-    am: "Highlands Tortoise Reserve — wild giant tortoises in their natural cloud-forest habitat.",
-    pm: "Transfer to Baltra Airport — farewell to the islands with memories for a lifetime.",
+    am: "El Chato Reserve — last chance for vegetarian finch, Galapagos flycatcher and a final tortoise encounter in the cloud forest.",
+    pm: "Transfer to Baltra Airport with your fully annotated species checklist.",
     image:
-      "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=70",
+      "https://images.unsplash.com/photo-1500829243541-74b677fecc30?auto=format&fit=crop&w=1200&q=70",
   },
 ];
 
@@ -95,11 +95,11 @@ export function ItinerarySection() {
     <section className="section-light py-14 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
-          <p className="text-sm text-muted-foreground mb-1">Sample Itinerary — Galapagos Legend</p>
+          <p className="text-sm text-muted-foreground mb-1">Sample Birding Itinerary — Galapagos Legend</p>
           <h2 className="text-3xl md:text-4xl font-bold text-cta">
-            North & West Expedition
+            North, West & Southern Birding Circuit
           </h2>
-          <p className="text-lg text-foreground/80">8 Days / 7 Nights</p>
+          <p className="text-lg text-foreground/80">8 Days / 7 Nights · 50+ species checklist</p>
         </div>
 
         {/* Mobile: horizontal day tabs */}

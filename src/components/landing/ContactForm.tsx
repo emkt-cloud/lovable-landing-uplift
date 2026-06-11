@@ -46,10 +46,10 @@ export function ContactForm() {
     <section id="claim-form" className="section-light py-16 px-4">
       <div className="max-w-lg mx-auto">
         <h2 className="text-3xl font-bold text-center text-foreground mb-2">
-          Claim Your Galapagos Deal
+          Claim Your Galapagos Birding Deal
         </h2>
         <p className="text-center text-muted-foreground mb-8">
-          Get a personalized quote in under 24 hours
+          Personalised quote with departure dates by bird season — in under 24 hours
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
