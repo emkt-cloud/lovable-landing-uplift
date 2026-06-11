@@ -14,12 +14,12 @@ import {
 } from "lucide-react";
 
 const included = [
-  { icon: Utensils, label: "All meals onboard" },
-  { icon: Wine, label: "Lounge & bar access" },
-  { icon: Sparkles, label: "Sun deck & jacuzzi" },
-  { icon: Mountain, label: "Daily guided hikes" },
-  { icon: Waves, label: "Snorkeling gear" },
-  { icon: Compass, label: "Naturalist guides (EN/ES)" },
+  { icon: Compass, label: "Certified naturalist birding guides (EN/ES)" },
+  { icon: Mountain, label: "Daily dawn & dusk birding excursions" },
+  { icon: Utensils, label: "All meals & early-bird breakfasts onboard" },
+  { icon: Waves, label: "Snorkeling gear for marine bird sites" },
+  { icon: Sparkles, label: "Species checklist & evening briefings" },
+  { icon: Wine, label: "Lounge, sun deck & jacuzzi access" },
 ];
 
 const notIncluded = [
@@ -29,7 +29,7 @@ const notIncluded = [
   { icon: Anchor, label: "Kayak rental" },
   { icon: Shirt, label: "Wetsuit rental" },
   { icon: Wifi, label: "Onboard Wi-Fi" },
-  { icon: Shield, label: "Travel insurance" },
+  { icon: Shield, label: "Travel insurance (mandatory)" },
   { icon: Wine, label: "Premium beverages & gratuities" },
 ];
 

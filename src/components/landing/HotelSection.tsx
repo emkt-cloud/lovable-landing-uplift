@@ -41,9 +41,7 @@ export function HotelSection() {
               3 FREE Nights at GO Quito Hotel
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Begin and end your Galapagos adventure in luxury. Stay at the award-winning
-              GO Quito Hotel — a tribute to the Andes blending elegant design,
-              eco-innovation and authentic Ecuadorian culture, all in the heart of Quito.
+              Acclimatise at 2,850 m before flying to the archipelago — Quito's cloud-forest valleys are a birding destination of their own. Stay at the award-winning GO Quito Hotel and add optional half-day birding tours to Yanacocha or Tandayapa.
             </p>
 
             <div className="space-y-4 mb-8">
