@@ -84,7 +84,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="section-dark relative min-h-[90vh] flex items-center overflow-hidden">
             <img
         src={heroImg}
         alt="Blue-footed Booby in the Galapagos Islands"
