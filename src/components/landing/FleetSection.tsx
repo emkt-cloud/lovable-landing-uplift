@@ -1,47 +1,14 @@
-import shipLegend from "@/assets/ship-legend.jpg";
 import shipCoral from "@/assets/ship-coral.jpg";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Users, Anchor, Calendar, Bed } from "lucide-react";
+import { Users, Anchor, Calendar, Bed, Compass, Binoculars } from "lucide-react";
 
-type Ship = {
-  id: string;
-  name: string;
-  tag: string;
-  image: string;
-  blurb: string;
-  stats: { icon: typeof Users; label: string; value: string }[];
-};
-
-const ships: Ship[] = [
-  {
-    id: "legend",
-    name: "Galapagos Legend",
-    tag: "Boutique Birding Expedition",
-    image: shipLegend,
-    blurb:
-      "The fastest ship in the archipelago means more dawn landings at peak bird activity. Stable platform for scopes and big lenses, naturalist-led briefings every evening and access to remote seabird colonies like Genovesa and Punta Suárez.",
-    stats: [
-      { icon: Users, label: "Birders per group", value: "Max 16 per guide" },
-      { icon: Bed, label: "Sun decks", value: "360° viewing & scope-ready" },
-      { icon: Anchor, label: "Routes", value: "North · West · South circuits" },
-      { icon: Calendar, label: "Itineraries", value: "4, 5 & 8 days" },
-    ],
-  },
-  {
-    id: "coral",
-    name: "Coral I & Coral II",
-    tag: "Small-Group Birding Yachts",
-    image: shipCoral,
-    blurb:
-      "Intimate yachts ideal for serious birders: tighter groups, quieter zodiacs and flexible landings to follow the birds. Panoramic lounge for sea-watching, open deck for pelagic species and naturalist guides specialised in Galapagos avifauna.",
-    stats: [
-      { icon: Users, label: "Guests", value: "Coral I: 36 · Coral II: 20" },
-      { icon: Bed, label: "Group size", value: "Small birding parties" },
-      { icon: Anchor, label: "Style", value: "Quiet, low-impact landings" },
-      { icon: Calendar, label: "Itineraries", value: "4, 5 & 8 days" },
-    ],
-  },
+const stats = [
+  { icon: Users, label: "Capacity", value: "Coral I · 36   ·   Coral II · 20" },
+  { icon: Bed, label: "Group size", value: "Small birding parties" },
+  { icon: Anchor, label: "Style", value: "Quiet, low-impact landings" },
+  { icon: Calendar, label: "Itineraries", value: "4, 5 & 8 days" },
+  { icon: Compass, label: "Routes", value: "North · South · East circuits" },
+  { icon: Binoculars, label: "Guiding", value: "Naturalist specialised in avifauna" },
 ];
 
 function scrollToForm() {
@@ -50,77 +17,84 @@ function scrollToForm() {
 
 export function FleetSection() {
   return (
-    <section className="section-light py-16 px-4">
+    <section className="section-light py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-cta mb-3">
-            Our Birding Fleet
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Two expedition platforms built for birders
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Choose the ship that matches your birding style — flagship reach or intimate small-group access.
-          </p>
+        {/* Header */}
+        <div className="grid md:grid-cols-12 gap-6 mb-12 items-end">
+          <div className="md:col-span-7">
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-cta mb-3">
+              The Ship · Coral I & Coral II
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-tight">
+              Small-group yachts,<br />
+              built for serious birders.
+            </h2>
+          </div>
+          <div className="md:col-span-5">
+            <p className="text-muted-foreground leading-relaxed">
+              Intimate twin yachts with tighter groups, quieter zodiacs and flexible
+              landings to follow the birds. Panoramic lounge for sea-watching, open
+              deck for pelagic species and naturalist guides specialised in Galápagos
+              avifauna.
+            </p>
+          </div>
         </div>
 
-        <Tabs defaultValue="legend" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-10 h-auto p-1 bg-card border border-border">
-            {ships.map((s) => (
-              <TabsTrigger
-                key={s.id}
-                value={s.id}
-                className="py-3 text-sm font-semibold data-[state=active]:bg-cta data-[state=active]:text-cta-foreground"
-              >
-                {s.name}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+        {/* Editorial layout */}
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8">
+          {/* Image */}
+          <div className="lg:col-span-7 relative">
+            <div className="overflow-hidden rounded-sm">
+              <img
+                src={shipCoral}
+                alt="Coral I & Coral II yachts in the Galápagos"
+                className="w-full h-[420px] md:h-[520px] object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="hidden md:flex absolute -bottom-5 left-6 bg-background border border-border rounded-sm px-5 py-3 items-center gap-3 shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-cta" />
+              <span className="text-xs font-semibold tracking-widest uppercase text-foreground">
+                Coral I & II  ·  Twin Expedition Yachts
+              </span>
+            </div>
+          </div>
 
-          {ships.map((ship) => (
-            <TabsContent key={ship.id} value={ship.id} className="mt-0">
-              <div className="grid lg:grid-cols-2 gap-8">
-                <div className="rounded-xl overflow-hidden border border-border">
-                  <img
-                    src={ship.image}
-                    alt={ship.name}
-                    className="w-full h-full object-cover min-h-[280px]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex flex-col justify-center">
-                  <span className="text-xs font-semibold tracking-widest uppercase text-cta mb-2">
-                    {ship.tag}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    {ship.name}
-                  </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{ship.blurb}</p>
-
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {ship.stats.map((s) => (
-                      <div key={s.label} className="bg-card border border-border rounded-lg p-3">
-                        <div className="flex items-center gap-2 text-cta mb-1">
-                          <s.icon className="w-4 h-4" />
-                          <span className="text-xs uppercase tracking-wide">{s.label}</span>
-                        </div>
-                        <p className="text-sm font-semibold text-foreground">{s.value}</p>
-                      </div>
-                    ))}
+          {/* Stats panel */}
+          <div className="lg:col-span-5 flex flex-col">
+            <div className="border-t border-border">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="grid grid-cols-12 gap-4 py-4 border-b border-border items-center"
+                >
+                  <div className="col-span-1 text-cta">
+                    <s.icon className="w-4 h-4" strokeWidth={1.75} />
                   </div>
-
-                  <Button
-                    onClick={scrollToForm}
-                    className="bg-cta text-cta-foreground hover:bg-cta/90 w-full sm:w-auto"
-                    size="lg"
-                  >
-                    Get a Quote for {ship.id === "legend" ? "the Legend" : "Coral Yachts"}
-                  </Button>
+                  <div className="col-span-5 text-[11px] font-semibold tracking-[0.18em] uppercase text-muted-foreground">
+                    {s.label}
+                  </div>
+                  <div className="col-span-6 text-sm font-medium text-foreground text-right">
+                    {s.value}
+                  </div>
                 </div>
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+              ))}
+            </div>
+
+            <div className="mt-8">
+              <Button
+                onClick={scrollToForm}
+                className="bg-cta text-cta-foreground hover:bg-cta/90 rounded-sm font-semibold tracking-wide"
+                size="lg"
+              >
+                Request a Coral quote →
+              </Button>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Limited spaces · 2026 birding departures
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
