@@ -28,13 +28,13 @@ function LandingPage() {
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
       <SocialProof />
-      <FleetSection />
       <ItinerarySection />
-      <IncludedSection />
+      <FleetSection />
       <OnboardSection />
+      <IncludedSection />
       <HotelSection />
-      <CTASection />
       <FAQSection />
+      <CTASection />
       <ContactForm />
       <StickyBar />
       <footer className="section-light py-6 text-center text-xs text-muted-foreground border-t border-border">
